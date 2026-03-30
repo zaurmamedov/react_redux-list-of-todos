@@ -56,7 +56,12 @@ export const TodoList: React.FC<Props> = ({ todos }) => {
             </td>
             <td className="has-text-right is-vcentered">
               {todo.id === selectedTodo?.id ? (
-                <button data-cy="selectButton" className="button" type="button">
+                <button
+                  data-cy="selectButton"
+                  className="button"
+                  type="button"
+                  onClick={() => dispatch(setSelectedTodo(null))}
+                >
                   <span className="icon" data-cy="iconCompleted">
                     <i className="far fa-eye-slash" />
                   </span>
